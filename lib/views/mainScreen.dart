@@ -86,17 +86,17 @@ class MainScreen extends StatelessWidget {
                       IconButton(
                         icon: const Icon(Icons.facebook, color: Color(0xff93833D),),
                         onPressed: () {
-                          // Handle Facebook login
+
                         },
                       ),
-                      const SizedBox(width: 20), // Spacing between icons
+                      const SizedBox(width: 20),
                       IconButton(
                         icon: const Icon(Ionicons.logo_google, color: Color(0xff93833D),),
                         onPressed: () {
 
                         },
                       ),
-                      const SizedBox(width: 10), // Spacing between icons
+                      const SizedBox(width: 10),
                       IconButton(
                         icon: const Icon(Icons.apple, color: Color(0xff93833D),),
                         onPressed: () {

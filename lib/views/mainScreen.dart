@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -20,40 +21,96 @@ class MainScreen extends StatelessWidget {
           const SizedBox(height: 20),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
-              width: 332,
-              height: 301,
+              width: 301,
+              height: 332,
               decoration: BoxDecoration(
                 color: const Color(0xff333333),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                  const SizedBox(height: 50),
+                  SizedBox(
+                    width: 214,
+                    height: 48,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xff93833D),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    child: const Text('Button 1'),
                   ),
+
                   const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+
+                  SizedBox(
+                    width: 214,
+                    height: 48,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Color(0xff93833D)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: const Text(
+                        'Sign Up',
+                        style: TextStyle(color: Color(0xff93833D)),
                       ),
                     ),
-                    child: const Text('Button 2'),
+                  ),
+
+                  const SizedBox(height: 20),
+
+
+                  const Text(
+                    "Or",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.facebook, color: Color(0xff93833D),),
+                        onPressed: () {
+                          // Handle Facebook login
+                        },
+                      ),
+                      const SizedBox(width: 20), // Spacing between icons
+                      IconButton(
+                        icon: const Icon(Ionicons.logo_google, color: Color(0xff93833D),),
+                        onPressed: () {
+
+                        },
+                      ),
+                      const SizedBox(width: 10), // Spacing between icons
+                      IconButton(
+                        icon: const Icon(Icons.apple, color: Color(0xff93833D),),
+                        onPressed: () {
+
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
+          const SizedBox(height: 20,),
+          const Text("© EL S.I.X - 2024",style: TextStyle(color: Color(0xff93833D),fontSize: 15,fontWeight: FontWeight.bold),)
         ],
       ),
     );

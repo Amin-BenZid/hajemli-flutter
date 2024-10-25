@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-
+import 'package:hajamli/constants.dart';
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffEEEEEE),
+      backgroundColor: bg_color,
       body: Column(
         children: [
           const SizedBox(height: 50),
@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
               width: 301,
               height: 332,
               decoration: BoxDecoration(
-                color: const Color(0xff333333),
+                color: secondary_color,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -38,14 +38,14 @@ class MainScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff93833D),
+                        backgroundColor: primary_color,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       child: const Text(
                         'Login',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: bg_color),
                       ),
                     ),
                   ),
@@ -58,14 +58,14 @@ class MainScreen extends StatelessWidget {
                     child: OutlinedButton(
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Color(0xff93833D)),
+                        side: const BorderSide(color: primary_color),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       child: const Text(
                         'Sign Up',
-                        style: TextStyle(color: Color(0xff93833D)),
+                        style: TextStyle(color: primary_color),
                       ),
                     ),
                   ),
@@ -75,7 +75,7 @@ class MainScreen extends StatelessWidget {
 
                   const Text(
                     "Or",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(color: bg_color, fontSize: 20),
                   ),
 
                   const SizedBox(height: 20),
@@ -84,21 +84,21 @@ class MainScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        icon: const Icon(Icons.facebook, color: Color(0xff93833D),),
+                        icon: const Icon(Icons.facebook, color: primary_color,),
                         onPressed: () {
 
                         },
                       ),
                       const SizedBox(width: 20),
                       IconButton(
-                        icon: const Icon(Ionicons.logo_google, color: Color(0xff93833D),),
+                        icon: const Icon(Ionicons.logo_google, color: primary_color,),
                         onPressed: () {
 
                         },
                       ),
                       const SizedBox(width: 10),
                       IconButton(
-                        icon: const Icon(Icons.apple, color: Color(0xff93833D),),
+                        icon: const Icon(Icons.apple, color: primary_color,),
                         onPressed: () {
 
                         },
@@ -110,7 +110,7 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20,),
-          const Text("© EL S.I.X - 2024",style: TextStyle(color: Color(0xff93833D),fontSize: 15,fontWeight: FontWeight.bold),)
+          const Text("© EL S.I.X - 2024",style: TextStyle(color: primary_color,fontSize: 15,fontWeight: FontWeight.bold),)
         ],
       ),
     );

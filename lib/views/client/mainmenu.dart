@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hajamli/appBar.dart';
 import 'package:hajamli/constants.dart';
+import 'package:hajamli/views/client/drawerwidget.dart';
 
 class ClientMainMenu extends StatefulWidget {
   const ClientMainMenu({super.key});
@@ -10,126 +11,69 @@ class ClientMainMenu extends StatefulWidget {
 }
 
 class _ClientMainMenuState extends State<ClientMainMenu> {
+  final TextEditingController codecontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Image(image: AssetImage("lib/assets/3.png"),height: 100,),centerTitle: true,
-        backgroundColor: bg_color,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: ImageIcon(
-                AssetImage("lib/assets/menu.png"),
-                size: 25,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          },
-        ),
-      ),
+      appBar:  const HajamliAppBar(),
       backgroundColor: bg_color,
-      drawer: Drawer(
-        backgroundColor: primary_color,
-        width: 290,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(45),
-            topRight: Radius.circular(45),
-          ),
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 50),
-            Image(
-              image: AssetImage("lib/assets/3.png"),
-              width: 200,
-              height: 100,
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            Divider(thickness: 2, color: secondary_color),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.person_2_rounded, color: secondary_color, size: 30),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 5),
-                Text("Profile", style: TextStyle(fontSize: 20, color: bg_color)),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.punch_clock_rounded, color: secondary_color, size: 30),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 5),
-                Text("History", style: TextStyle(fontSize: 20, color: bg_color)),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: Icon(Icons.language_rounded, color: secondary_color, size: 30),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 5),
-                Text("Language", style: TextStyle(fontSize: 20, color: bg_color)),
-              ],
-            ),
-            SizedBox(height: 160),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: secondary_color,
-                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              ),
-              child: Text("Logout", style: TextStyle(color: bg_color)),
-            ),
-            SizedBox(height: 20),
-            Divider(thickness: 2, color: secondary_color),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                SizedBox(width: 10),
-                Text("About Us", style: TextStyle(color: secondary_color, fontSize: 15, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            Row(
-              children: [
-                SizedBox(width: 10),
-                Text("Contact :", style: TextStyle(color: secondary_color, fontSize: 15, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            Row(
-              children: [
-                SizedBox(width: 10),
-                Text("jfhizfifz@gmail.com", style: TextStyle(color: secondary_color, fontSize: 15, fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ],
-        ),
-      ),
+      drawer: const ClientDrawer(),
       body: Column(children: [
-        SizedBox(height: 40,),
-        Center(child: Image(image: AssetImage("lib/assets/5.png"),width: 290,),),
+        const SizedBox(height: 40,),
+        const Center(child: Image(image: AssetImage("lib/assets/5.png"),width: 280,),),
         Expanded(
           child: Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(width: 300,decoration: BoxDecoration(
+              child: Container(width: 300,decoration: const BoxDecoration(
                 color: secondary_color,
                 borderRadius: BorderRadius.only(topRight: Radius.circular(20),topLeft: Radius.circular(20)),
               ),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center,children: [
-
-
+              child: Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment:CrossAxisAlignment.center,children: [
+                const SizedBox(height: 40,),
+                SizedBox(height: 50,width: 200,
+                  child: TextFormField(
+                    controller: codecontroller,
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      hintText: "Code",
+                      hintStyle: const TextStyle(color: primary_color),
+                      filled: true,
+                      fillColor: secondary_color,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(color: primary_color),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(color: primary_color),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: const BorderSide(color: primary_color),
+                      ),
+                    ),
+                    style: const TextStyle(color: primary_color),
+                  ),
+                ),
+                const SizedBox(height: 20,),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add onPressed functionality
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: primary_color,
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text(
+                    'Join',
+                    style: TextStyle(color: bg_color),
+                  ),
+                ),
               ],),),
             ),
           ),

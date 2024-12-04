@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hajamli/views/client/BarberProfile.dart';
 import 'package:hajamli/views/client/mainmenu.dart';
 import 'package:hajamli/views/client/signup.dart';
 import 'package:hajamli/views/splash.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ClientMainMenu(),
+      home: SignUpScreen(),
     );
   }
 }
